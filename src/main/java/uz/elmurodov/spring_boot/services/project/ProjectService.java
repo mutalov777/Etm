@@ -14,5 +14,5 @@ public interface ProjectService extends GenericCrudService<
         ProjectCreateDto,
         ProjectUpdateDto,
         GenericCriteria,
-        Long> {
+        Long>  {
 }

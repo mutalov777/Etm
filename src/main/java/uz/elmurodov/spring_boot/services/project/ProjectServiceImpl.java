@@ -14,6 +14,7 @@ import uz.elmurodov.spring_boot.utils.BaseUtils;
 import uz.elmurodov.spring_boot.utils.validators.project.ProjectValidator;
 
 import java.util.List;
+
 @Service
 public class ProjectServiceImpl extends AbstractService<ProjectRepository, ProjectMapper, ProjectValidator>
         implements ProjectService {
@@ -41,12 +42,12 @@ public class ProjectServiceImpl extends AbstractService<ProjectRepository, Proje
 
     @Override
     public List<ProjectDto> getAll(GenericCriteria criteria) {
-        return null;
+         return mapper.toDto(repository.findAll());
     }
 
     @Override
     public ProjectDto get(Long id) {
-        return null;
+        return mapper.toDto(repository.getById(id));
     }
 
     @Override

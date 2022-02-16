@@ -13,5 +13,4 @@ public interface ProjectMapper extends BaseMapper<
         ProjectDto,
         ProjectCreateDto,
         ProjectUpdateDto> {
-
 }
