@@ -8,15 +8,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import uz.elmurodov.spring_boot.criteria.GenericCriteria;
-import uz.elmurodov.spring_boot.dto.organization.OrganizationCreateDto;
-import uz.elmurodov.spring_boot.services.project.ProjectServise;
+import uz.elmurodov.spring_boot.dto.project.ProjectCreateDto;
+import uz.elmurodov.spring_boot.services.project.ProjectService;
 
 @Controller
 @RequestMapping("/project/*")
-public class ProjectController extends AbstractController<ProjectServise> {
+public class ProjectController extends AbstractController<ProjectService> {
+
 
     @Autowired
-    public ProjectController(ProjectServise service) {
+    public ProjectController(ProjectService service) {
         super(service);
     }
 
@@ -26,7 +27,7 @@ public class ProjectController extends AbstractController<ProjectServise> {
     }
 
     @RequestMapping(value = "create/", method = RequestMethod.POST)
-    public String create(@ModelAttribute OrganizationCreateDto dto) {
+    public String create(@ModelAttribute ProjectCreateDto dto) {
         service.create(dto);
         return "redirect:/";
     }

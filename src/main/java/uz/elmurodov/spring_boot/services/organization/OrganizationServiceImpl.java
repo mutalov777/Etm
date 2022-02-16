@@ -14,10 +14,10 @@ import uz.elmurodov.spring_boot.utils.BaseUtils;
 import uz.elmurodov.spring_boot.utils.validators.organization.OrganizationValidator;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
-public class OrganizationServiceImpl extends AbstractService<OrganizationRepository, OrganizationMapper, OrganizationValidator>
+public class OrganizationServiceImpl extends AbstractService<OrganizationRepository,
+        OrganizationMapper, OrganizationValidator>
         implements OrganizationService {
 
 

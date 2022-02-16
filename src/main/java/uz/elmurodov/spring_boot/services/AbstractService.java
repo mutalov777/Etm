@@ -1,11 +1,9 @@
 package uz.elmurodov.spring_boot.services;
 
-import uz.elmurodov.spring_boot.mapper.BaseMapper;
 import uz.elmurodov.spring_boot.mapper.Mapper;
 import uz.elmurodov.spring_boot.reposiroty.AbstractRepository;
 import uz.elmurodov.spring_boot.utils.BaseUtils;
-import uz.elmurodov.spring_boot.utils.validators.organization.AbstractValidator;
-import uz.elmurodov.spring_boot.utils.validators.organization.Validator;
+import uz.elmurodov.spring_boot.utils.validators.Validator;
 
 /**
  * @param <R> repository
