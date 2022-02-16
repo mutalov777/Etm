@@ -50,3 +50,26 @@
         </div>
     </nav>
 </section>
+
+
+<section th:fragment="navbar_project">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" th:href="@{/}">TaskManager</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1"
+                aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item p-2">
+                    <a th:href="@{/projects/create/}" class="nav-link">Create Project</a>
+                </li>
+                <li class="nav-item p-2">
+                    <a th:href="@{/projects/list/}" class="nav-link">projects</a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</section>

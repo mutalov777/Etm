@@ -9,11 +9,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="spring_boot" />
         <module name="spring-boot-projects" />
+        <module name="library" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="library" options="-parameters" />
       <module name="spring-boot-projects" options="-parameters" />
       <module name="spring_boot" options="-parameters" />
     </option>
