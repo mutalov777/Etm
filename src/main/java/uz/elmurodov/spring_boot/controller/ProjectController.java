@@ -57,7 +57,8 @@ public class ProjectController extends AbstractController<ProjectService> {
     }
 
     @RequestMapping("detail/{id}/")
-    public String detail(@PathVariable Long id) {
+    public String detail(Model model, @PathVariable Long id) {
+        model.addAttribute("project", service.get(id));
         return "project/detail";
     }
 

@@ -59,12 +59,12 @@ public class ProjectServiceImpl extends AbstractService<ProjectRepository, Proje
 
     @Override
     public List<ProjectDto> getAll(GenericCriteria criteria) {
-        return null;
+         return mapper.toDto(repository.findAll());
     }
 
     @Override
     public ProjectDto get(Long id) {
-        return null;
+        return mapper.toDto(repository.getById(id));
     }
 
     @Override

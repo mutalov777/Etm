@@ -33,20 +33,6 @@ public class Project extends Auditable implements BaseEntity {
     @Column(name = "closed")
     private Boolean closed;
 
-    @Convert(disableConversion = true)
-    @Column(name = "createdat")
-    private Instant createdat;
-
-    @Column(name = "createby", nullable = false)
-    private Long createby;
-
-    @Convert(disableConversion = true)
-    @Column(name = "updatedat")
-    private Instant updatedat;
-
-    @Column(name = "updateby")
-    private Long updateby;
-
     public Project(Long id) {
         super(id);
     }

@@ -1,10 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragments.html :: header('Organization Details Page')">
 </head>
 <body>
-
+<header>
+    <section th:include="fragments.html :: navbar"></section>
+</header>
+<main>
+    <table class="table">
+        <h1 th:text="'Detail of ' + ${project.name}"></h1>
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Terms of reference</th>
+            <th scope="col">Created At</th>
+            <th scope="col">Is Closed</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row" > # </th>
+            <th th:text="${project.name}"></th>
+            <td th:href="@{${project.tzPath}}">Download</td>
+            <td th:text="${project.createdat}"></td>
+            <span th:if="${project.closed}"><td>Project closed</td></span>
+            <span th:unless="${project.closed}"><td>Project not closed</td></span>
+        </tr>
+        </tbody>
+    </table>
+</main>
+<footer>
+    <section th:include="fragments.html :: js"></section>
+</footer>
 </body>
 </html>
