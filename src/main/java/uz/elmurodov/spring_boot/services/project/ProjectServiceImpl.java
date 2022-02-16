@@ -1,11 +1,15 @@
 package uz.elmurodov.spring_boot.services.project;
 
+import lombok.NonNull;
+import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 import uz.elmurodov.spring_boot.criteria.GenericCriteria;
 import uz.elmurodov.spring_boot.dto.project.ProjectCreateDto;
 import uz.elmurodov.spring_boot.dto.project.ProjectDto;
 import uz.elmurodov.spring_boot.dto.project.ProjectUpdateDto;
+import uz.elmurodov.spring_boot.entity.file.Uploads;
 import uz.elmurodov.spring_boot.entity.project.Project;
 import uz.elmurodov.spring_boot.mapper.ProjectMapper;
 import uz.elmurodov.spring_boot.reposiroty.ProjectRepository;
@@ -14,6 +18,7 @@ import uz.elmurodov.spring_boot.utils.BaseUtils;
 import uz.elmurodov.spring_boot.utils.validators.project.ProjectValidator;
 
 import java.util.List;
+
 @Service
 public class ProjectServiceImpl extends AbstractService<ProjectRepository, ProjectMapper, ProjectValidator>
         implements ProjectService {
@@ -24,9 +29,18 @@ public class ProjectServiceImpl extends AbstractService<ProjectRepository, Proje
 
     @Override
     public Long create(ProjectCreateDto createDto) {
-        Project project = mapper.fromCreateDto(createDto);
+        Project project = createPath(createDto, createDto.getTzPath());
+        project.setCreateby(1L);
         repository.save(project);
         return project.getId();
+    }
+
+    @SneakyThrows
+    public Project createPath(final ProjectCreateDto dto, @NonNull MultipartFile file) {
+        Project project = mapper.fromCreateDto(dto);
+        Uploads uploads = fileStorageService.store(file);
+        project.setTzPath(uploads.getPath());
+        return project;
     }
 
     @Override
