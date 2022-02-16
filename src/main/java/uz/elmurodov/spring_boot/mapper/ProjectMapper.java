@@ -6,10 +6,6 @@ import uz.elmurodov.spring_boot.dto.project.ProjectCreateDto;
 import uz.elmurodov.spring_boot.dto.project.ProjectDto;
 import uz.elmurodov.spring_boot.dto.project.ProjectUpdateDto;
 import uz.elmurodov.spring_boot.entity.project.Project;
-
-/**
- * @author Amonov Bunyod, ср 16.02.2022 15:57 .
- */
 @Component
 @Mapper(componentModel = "spring")
 public interface ProjectMapper extends BaseMapper<
