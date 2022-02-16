@@ -9,6 +9,11 @@ import uz.elmurodov.spring_boot.dto.Dto;
 @Setter
 @Builder
 public class ProjectCreateDto implements Dto {
+    private String name;
+    private String tzPath;
 
-
+    public ProjectCreateDto(String name, String tzPath) {
+        this.name = name;
+        this.tzPath = tzPath;
+    }
 }
