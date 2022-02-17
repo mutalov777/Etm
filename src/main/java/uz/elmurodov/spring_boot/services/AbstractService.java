@@ -7,8 +7,8 @@ import uz.elmurodov.spring_boot.utils.validators.Validator;
 
 /**
  * @param <R> repository
- * @param <M>
- * @param <V>
+ * @param <M> mapper
+ * @param <V> validator
  */
 public abstract class AbstractService<
         R extends AbstractRepository,
