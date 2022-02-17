@@ -3,7 +3,6 @@ package uz.elmurodov.spring_boot.dto.project;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.web.multipart.MultipartFile;
 import uz.elmurodov.spring_boot.dto.Dto;
 
 @Getter
@@ -11,9 +10,9 @@ import uz.elmurodov.spring_boot.dto.Dto;
 @Builder
 public class ProjectCreateDto implements Dto {
     private String name;
-    private MultipartFile tzPath;
+    private String tzPath;
 
-    public ProjectCreateDto(String name, MultipartFile tzPath) {
+    public ProjectCreateDto(String name, String tzPath) {
         this.name = name;
         this.tzPath = tzPath;
     }
