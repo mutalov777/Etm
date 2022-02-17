@@ -3,7 +3,6 @@ package uz.elmurodov.spring_boot.services.project;
 import lombok.NonNull;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import uz.elmurodov.spring_boot.criteria.GenericCriteria;
@@ -35,7 +34,6 @@ public class ProjectServiceImpl extends AbstractService<ProjectRepository, Proje
     @Override
     public Long create(ProjectCreateDto createDto) {
         Project project = createPath(createDto, createDto.getTzPath());
-        project.setCreateby(1L);
         repository.save(project);
         return project.getId();
     }
