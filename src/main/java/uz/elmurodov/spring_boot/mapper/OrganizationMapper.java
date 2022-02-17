@@ -2,6 +2,7 @@ package uz.elmurodov.spring_boot.mapper;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import uz.elmurodov.spring_boot.dto.organization.OrganizationCreateDto;
 import uz.elmurodov.spring_boot.dto.organization.OrganizationDto;
